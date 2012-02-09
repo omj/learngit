@@ -1,9 +1,24 @@
-/**
- * Created by IntelliJ IDEA.
- * User: Gene
- * Date: 08.02.12
- * Time: 17:09
- * To change this template use File | Settings | File Templates.
- */
-public class Bootstrap {
+import models.Post;
+import models.User;
+import play.jobs.Job;
+import play.jobs.OnApplicationStart;
+import play.test.Fixtures;
+
+@OnApplicationStart
+public class Bootstrap  extends Job {
+
+    public void doJob() {
+        // Check if the database is empty
+//        if(User.count() == 0) {
+            try {
+                Fixtures.deleteDatabase();
+                Fixtures.loadModels("initial-data.yml");
+            }
+            catch(Throwable t)
+            {
+                System.out.println(t);
+            }
+//        }
+    }
+
 }
