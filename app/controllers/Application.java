@@ -58,5 +58,10 @@ public class Application extends Controller {
         Cache.set(id, code, "10mn");
         renderBinary(captcha);
     }
+    
+    public static void listTagged(String tag) {
+        List<Post> posts = Post.findTaggedWith(tag);
+        render(tag, posts);
+    }
 
 }

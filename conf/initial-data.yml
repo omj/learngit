@@ -11,6 +11,18 @@ User(jeff):
     password:       secret
     fullname:       Jeff
 
+Tag(play):
+    name:           Play
+
+Tag(architecture):
+    name:           Architecture
+
+Tag(test):
+    name:           Test
+
+Tag(mvc):
+    name:           MVC
+
 Post(firstBobPost):
     title:          About the model layer
     postedAt:       2009-06-14
@@ -30,6 +42,10 @@ Post(secondBobPost):
     title:          Just a test of YABE
     postedAt:       2009-03-25
     author:         bob
+    tags:
+                    - play
+                    - architecture
+                    - mvc
     content:        >
                     Well, it's just a test.
 
