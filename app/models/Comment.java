@@ -1,5 +1,6 @@
 package models;
 
+import play.data.validation.MaxSize;
 import play.data.validation.Required;
 import play.db.jpa.Model;
 
@@ -19,6 +20,7 @@ public class Comment extends Model {
     
     @Lob
     @Required
+    @MaxSize(10000)
     public String content;
     
     @ManyToOne

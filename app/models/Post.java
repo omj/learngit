@@ -1,5 +1,7 @@
 package models;
 
+import play.data.validation.MaxSize;
+import play.data.validation.Required;
 import play.db.jpa.Model;
 
 import javax.persistence.*;
@@ -7,13 +9,19 @@ import java.util.*;
 
 @Entity
 public class Post extends Model {
-    
+
+    @Required
     public String title;
+
+    @Required
     public Date postedAt;
     
     @Lob
+    @Required
+    @MaxSize(10000)
     public String content;
-    
+
+    @Required
     @ManyToOne
     public User author;
     
