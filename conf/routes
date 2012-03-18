@@ -18,6 +18,10 @@ GET     /captcha                                Application.captcha
 GET     /posts/{tag}                    Application.listTagged
 
 # Administration
+GET     /admin/myPosts/{id}                 Admin.form
+GET    /admin/new          Admin.form
+POST    /admin/myPosts/{id}                 Admin.save
+POST   /admin/new          Admin.save
 GET    /admin/?            Admin.index
 *      /admin              module:crud
 
