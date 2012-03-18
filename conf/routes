@@ -17,7 +17,8 @@ GET     /captcha                                Application.captcha
 # Tagged posts
 GET     /posts/{tag}                    Application.listTagged
 
-# Import CRUD routes
+# Administration
+GET    /admin/?            Admin.index
 *      /admin              module:crud
 
 # Ignore favicon requests
